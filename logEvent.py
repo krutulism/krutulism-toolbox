@@ -32,22 +32,20 @@ def main():
 
     datetimestamp = dt.datetime.now().isoformat()
     worksheet = sh.worksheet(args.sheetName)
+    rowContents = [[]]
 
     match args.sheetName:
         case 'Exercises'':
             rowContents = [[datetimestamp, args.eventType, args.duration, args.reps]]
 
         case 'Nuisances':
-            pass
+            rowContents = [[datetimestamp, args.eventType]]
 
         case other:
             print('No such sheet name found')
 
     indexStr = firstColInd + nextRowInd + ':' + maxCol + nextRowInd
     worksheet.update(indexStr, rowContents)
-
-    
-
 
 
 if __name__ == '__main__':
