@@ -1,5 +1,0 @@
-#Local config
-/config
-#Local security
-credentials.json
-token.json
