@@ -35,7 +35,7 @@ def main():
     rowContents = [[]]
 
     match args.sheetName:
-        case 'Exercises'':
+        case 'Exercises':
             rowContents = [[datetimestamp, args.eventType, args.duration, args.reps]]
 
         case 'Nuisances':

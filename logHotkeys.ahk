@@ -5,12 +5,13 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 #SingleInstance force
 
 ; Variables ;
-
+venv = ./toolbox-dublin/python.exe
+script = logEvent.py
 ;  ;  ;  ;  ;
 
 ; Hotkey declarations ;
-^+!Numpad1::
-    run cmd.exe
-    WinWait, ahk_exe cmd.exe
-    Send python logEvent.py 'Exercises' 'Stretch4' -d 12 -r -1
-
+^+!q::
+    run powershell.exe
+    WinWait, ahk_exe powershell.exe
+    Send & %venv% %script% 'Exercises' 'Stretch200' -d 400 -r -2 `; exit {Enter}
+return
